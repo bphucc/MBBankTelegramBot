@@ -1,0 +1,16 @@
+[Unit]
+Description=MB Bank Transaction Monitor
+After=network.target
+
+[Service]
+Type=simple
+User=admin
+WorkingDirectory=/home/admin/MBBankTelegram/
+ExecStart=/bin/bash /home/admin/MBBankTelegram/run_mb_monitor.sh your_username your_password
+Restart=always
+RestartSec=10
+StandardOutput=append:/home/admin/MBBankTelegram/mb_monitor_output.log
+StandardError=append:/home/admin/MBBankTelegram/mb_monitor_error.log
+
+[Install]
+WantedBy=multi-user.target

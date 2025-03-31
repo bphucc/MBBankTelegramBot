@@ -1,0 +1,5 @@
+.env
+*.log
+/src/__pycache__
+/.idea
+/.vscode
